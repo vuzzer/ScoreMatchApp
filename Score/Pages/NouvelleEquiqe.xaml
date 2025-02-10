@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Score.Pages.NouvelleEquiqe"
+             Title="Equipe">
+    <VerticalStackLayout>
+        <Label Text="Nom"/>
+        <Entry x:Name="txtNom" Margin="0,0,0,25"/>
+        
+        
+        
+        <Label Text="Description"/>
+        <Editor x:Name="txtDescription"  HeightRequest="100" Margin="0,0,0,25"/>
+        
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="10">
+            <Button x:Name="btnEnregistrer" Text="Enregistrer" Clicked="btnEnregistrer_Clicked"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

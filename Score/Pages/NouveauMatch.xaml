@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Score.Pages.NouveauMatch"
+             Title="Match">
+    <VerticalStackLayout Padding="20">
+        <Picker x:Name="pikEquipe1" Title="Equipe à domicile">
+            <Picker.ItemDisplayBinding>
+                <Binding Path="Nom" x:Name="txtpikEquipe1"/>
+            </Picker.ItemDisplayBinding>
+        </Picker>
+
+        <Picker x:Name="pikEquipe2" Title="Equipe à l'extérieur" Margin="0,20,0,20">
+            <Picker.ItemDisplayBinding>
+                <Binding Path="Nom" x:Name="txtpikEquipe2"/>
+            </Picker.ItemDisplayBinding>
+        </Picker>
+        
+        <Label Text="Score"/>
+        <HorizontalStackLayout VerticalOptions="Center">
+            <Entry x:Name="txtScoreEqu1" WidthRequest="200" Placeholder="Score équipe à domicile" Margin="0,0,15,0"/>
+            <Entry x:Name="txtScoreEqu2" WidthRequest="200" Placeholder="Score équipe à l'exterieur"/>
+        </HorizontalStackLayout>
+
+        <Label Text="Date du match" Margin="0,20,0,0"/>
+        <DatePicker x:Name="pikDateMatch" Margin="0,0,0,20"/>
+        
+        <Button x:Name="btnEnregistrer" Text="Enregistrer" />
+    </VerticalStackLayout>
+</ContentPage>

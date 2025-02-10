@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Score.Pages.DetailsEquipe"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Modifier" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Label 
+            x:Name="lbDesc"
+            />
+            <Label Text="Liste de tout les matches joués par l'équipe avec les points et les buts pour chaque matche." Margin="0,13,0,0" />
+
+            <Grid Margin="0,30,0,13">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Equipe" FontAttributes="Bold" Grid.Column="0" />
+                <Label Text="Score" FontAttributes="Bold" Grid.Column="1" />
+                <Label Text="Date du match" FontAttributes="Bold" Grid.Column="2" />
+
+            </Grid>
+
+
+            <CollectionView x:Name="lesMatchs">
+                <CollectionView.EmptyView>
+                    <Label Text="Aucun match dans la liste...."/>
+                </CollectionView.EmptyView>
+
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ContentView>
+                            <Border>
+                                <HorizontalStackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <VerticalStackLayout Grid.Column="0">
+                                            <Label Text="{Binding EquipeDomicile}">
+                                            </Label>
+                                            <Label Text="{Binding EquipeExterieure}">
+                                            </Label>
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout Grid.Column="1">
+                                            <Label Text="{Binding ScoreEquipeDomicile}">
+                                            </Label>
+                                            <Label Text="{Binding ScoreEquipeExterieure}">
+                                            </Label>
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                                            <Label Text="{Binding DateDuMatch}" Padding="30">
+                                            </Label>
+
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </HorizontalStackLayout>
+                            </Border>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
