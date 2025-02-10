@@ -19,7 +19,7 @@ public partial class DetailsEquipe : ContentPage
     {
         base.OnAppearing();
         var equipe = ServiceDB.ConnexionBD.Find<Equipe>(_equipe.Id);
-        _matches = ServiceDB.ConnexionBD.Table<Match>().OrderBy(m => m.DateDuMatch).ToList();
+        _matches = ServiceDB.ConnexionBD.Table<Match>().OrderBy(m => m.DateDuMatch).Reverse().ToList();
 
         lbDesc.Text = equipe.Description;
         this.Title = equipe.Nom;

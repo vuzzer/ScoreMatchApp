@@ -15,7 +15,7 @@ public partial class ListeDesMatchs : ContentPage
     {
         base.OnAppearing();
 
-        matches = ServiceDB.ConnexionBD.Table<Match>().OrderBy(x => x.DateDuMatch).ToList();
+        matches = ServiceDB.ConnexionBD.Table<Match>().OrderBy(m => m.DateDuMatch ).Reverse().ToList();
         lesMatchs.ItemsSource = matches;
     }
 

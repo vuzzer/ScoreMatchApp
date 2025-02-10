@@ -38,9 +38,7 @@
 
                     <DataTemplate>
                         <ContentView>
-                            <Border>
-                                <HorizontalStackLayout>
-                                    <Grid>
+                            <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
@@ -61,14 +59,13 @@
                                             </Label>
                                         </VerticalStackLayout>
 
-                                        <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                                        <VerticalStackLayout Grid.Column="2" HorizontalOptions="Start">
                                             <Label Text="{Binding DateDuMatch}" Padding="30">
                                             </Label>
 
                                         </VerticalStackLayout>
                                     </Grid>
-                                </HorizontalStackLayout>
-                            </Border>
+
                         </ContentView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

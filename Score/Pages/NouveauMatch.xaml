@@ -4,27 +4,27 @@
              x:Class="Score.Pages.NouveauMatch"
              Title="Match">
     <VerticalStackLayout Padding="20">
-        <Picker x:Name="pikEquipe1" Title="Equipe à domicile">
+        <Picker x:Name="equipeDomicile" Title="Equipe à domicile" SelectedIndexChanged="equipeDomicile_SelectedIndexChanged">
             <Picker.ItemDisplayBinding>
-                <Binding Path="Nom" x:Name="txtpikEquipe1"/>
+                <Binding Path="Nom" x:Name="txtEquipeDomicile"/>
             </Picker.ItemDisplayBinding>
         </Picker>
 
-        <Picker x:Name="pikEquipe2" Title="Equipe à l'extérieur" Margin="0,20,0,20">
+        <Picker x:Name="equipeExterieure" Title="Equipe à l'extérieur" Margin="0,20,0,20" SelectedIndexChanged="equipeExterieure_SelectedIndexChanged">
             <Picker.ItemDisplayBinding>
-                <Binding Path="Nom" x:Name="txtpikEquipe2"/>
+                <Binding Path="Nom" x:Name="txtEquipeExterieure"/>
             </Picker.ItemDisplayBinding>
         </Picker>
         
         <Label Text="Score"/>
         <HorizontalStackLayout VerticalOptions="Center">
-            <Entry x:Name="txtScoreEqu1" WidthRequest="200" Placeholder="Score équipe à domicile" Margin="0,0,15,0"/>
-            <Entry x:Name="txtScoreEqu2" WidthRequest="200" Placeholder="Score équipe à l'exterieur"/>
+            <Entry x:Name="txtScoreEquipeDomicile" WidthRequest="200" Placeholder="Score équipe à domicile" Margin="0,0,15,0"/>
+            <Entry x:Name="txtScoreEquipeExterieure" WidthRequest="200" Placeholder="Score équipe à l'exterieur"/>
         </HorizontalStackLayout>
 
         <Label Text="Date du match" Margin="0,20,0,0"/>
-        <DatePicker x:Name="pikDateMatch" Margin="0,0,0,20"/>
+        <DatePicker x:Name="dateDuMatch" Margin="0,0,0,20"/>
         
-        <Button x:Name="btnEnregistrer" Text="Enregistrer" />
+        <Button x:Name="btnEnregistrer" Text="Enregistrer" Clicked="btnEnregistrer_Clicked" />
     </VerticalStackLayout>
 </ContentPage>
